@@ -1,4 +1,5 @@
 import data from '../../../data.json'
+import CommentForm from './CommentForm'
 import PostFooter from './PostFooter'
 import PostHeader from './PostHeader'
 
@@ -23,7 +24,7 @@ export default function Post(post: PostProps) {
           name={userPost.name}
           role={userPost.role}
         />
-        <article className="pt-6">
+        <article className="py-6">
           <p className="pb-4">{post.content}</p>
           {post.hashtags.map((hashtag, index) => (
             <a href="#" className="text-sky-600" key={index}>
@@ -32,6 +33,7 @@ export default function Post(post: PostProps) {
           ))}
         </article>
         <footer>
+          <CommentForm />
           {post.comments.map((comment, index) => {
             const userComment = data.users.find(
               (user) => user.id === comment.userId,
