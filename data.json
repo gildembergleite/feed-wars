@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "name": "Darth Vader",
+      "role": "Sith",
+      "profile_url": "https://media.licdn.com/dms/image/C5603AQEH8jGbdqYaTw/profile-displayphoto-shrink_800_800/0/1635557656020?e=2147483647&v=beta&t=mFcbftOwDmqjV2sXKowvG4HPOS2hUtRlMW1jYAxKZ8E",
+      "cover_url": "https://i.pinimg.com/736x/59/01/bd/5901bd0dcd28e11cb61dee97983f7b31.jpg"
+    },
+    {
+      "name": "Luke Skywalker",
+      "role": "Jedi",
+      "url_image": "link_para_a_imagem_de_Luke_Skywalker.jpg"
+    },
+    {
+      "name": "Leia Organa",
+      "role": "Rebel",
+      "url_image": "link_para_a_imagem_de_Leia_Organa.jpg"
+    }
+  ],
+  "posts": [
+    {
+      "user": "Darth Vader",
+      "content": "Às vezes, é bom usar o lado negro da Força. #DarkSide #SithLife",
+      "hashtags": ["DarkSide", "SithLife"],
+      "comments": [
+        {
+          "user": "Luke Skywalker",
+          "content": "Darth Vader, você está perdendo a sua humanidade."
+        },
+        {
+          "user": "Leia Organa",
+          "content": "É hora de se redimir, Vader."
+        }
+      ]
+    },
+    {
+      "user": "Luke Skywalker",
+      "content": "A Força está conosco! #JediMaster #MayTheForceBeWithYou",
+      "hashtags": ["JediMaster", "MayTheForceBeWithYou"],
+      "comments": [
+        {
+          "user": "Darth Vader",
+          "content": "Luke, um dia você vai entender o equilíbrio entre a luz e a escuridão."
+        }
+      ]
+    },
+    {
+      "user": "Leia Organa",
+      "content": "Rebeldes, unam-se! #RebelAlliance #FreedomFighters",
+      "hashtags": ["RebelAlliance", "FreedomFighters"],
+      "comments": [
+        {
+          "user": "Luke Skywalker",
+          "content": "Estamos com você, Leia."
+        }
+      ]
+    }
+  ]
+}
