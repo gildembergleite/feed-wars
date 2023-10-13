@@ -4,20 +4,19 @@
       "id": 0,
       "name": "Darth Vader",
       "role": "Sith",
-      "profile_url": "https://media.licdn.com/dms/image/C5603AQEH8jGbdqYaTw/profile-displayphoto-shrink_800_800/0/1635557656020?e=2147483647&v=beta&t=mFcbftOwDmqjV2sXKowvG4HPOS2hUtRlMW1jYAxKZ8E",
-      "cover_url": "https://i.pinimg.com/736x/59/01/bd/5901bd0dcd28e11cb61dee97983f7b31.jpg"
+      "profileUrl": "https://media.licdn.com/dms/image/C5603AQEH8jGbdqYaTw/profile-displayphoto-shrink_800_800/0/1635557656020?e=2147483647&v=beta&t=mFcbftOwDmqjV2sXKowvG4HPOS2hUtRlMW1jYAxKZ8E"
     },
     {
       "id": 1,
       "name": "Luke Skywalker",
       "role": "Jedi",
-      "profile_url": "https://i.pinimg.com/736x/58/c4/8b/58c48b3f41ef5ee3c88678fea5a0dfe0.jpg"
+      "profileUrl": "https://i.pinimg.com/736x/58/c4/8b/58c48b3f41ef5ee3c88678fea5a0dfe0.jpg"
     },
     {
       "id": 2,
       "name": "Leia Organa",
       "role": "Rebel",
-      "profile_url": "https://pbs.twimg.com/profile_images/1131990281413365760/eVXBPmA__400x400.jpg"
+      "profileUrl": "https://pbs.twimg.com/profile_images/1131990281413365760/eVXBPmA__400x400.jpg"
     }
   ],
   "posts": [    {

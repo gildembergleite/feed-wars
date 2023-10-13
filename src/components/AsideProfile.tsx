@@ -11,7 +11,7 @@ export default function AsideProfile() {
             className="p-1 rounded-lg border-sky-600 border-2 bg-zinc-800"
             width={60}
             height={60}
-            src={data.users[0].profile_url!}
+            src={data.users[0].profileUrl!}
             alt=""
           />
         </div>
