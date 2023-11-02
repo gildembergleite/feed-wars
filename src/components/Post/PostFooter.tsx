@@ -1,15 +1,16 @@
 import Image from 'next/image'
+import { User, Comment } from '../../../data'
 
 interface PostFooterProps {
-  profileUrl: string
-  name: string
-  content: string
+  user: User
+  comment: Comment
+  onDeleteComment: Function
 }
 
 export default function PostFooter({
-  profileUrl,
-  name,
-  content,
+  user,
+  comment,
+  onDeleteComment,
 }: PostFooterProps) {
   return (
     <div className="flex justify-center items-start gap-4 pt-6">
@@ -18,7 +19,7 @@ export default function PostFooter({
           className="rounded-lg"
           width={54}
           height={54}
-          src={profileUrl}
+          src={user.profileUrl}
           alt=""
         />
       </div>
@@ -26,17 +27,20 @@ export default function PostFooter({
         <div className="flex flex-col w-full justify-between rounded-lg p-4 bg-zinc-700 gap-4">
           <header className="flex w-full justify-between items-start">
             <div>
-              <h4>{name}</h4>
+              <h4>{user.name}</h4>
               <span className="text-zinc-400 text-xs">Cerca de 30 minutos</span>
             </div>
             <div>
-              <button className="text-sm font-bold text-red-600">
+              <button
+                onClick={() => onDeleteComment(comment)}
+                className="text-sm font-bold text-red-600"
+              >
                 Excluir
               </button>
             </div>
           </header>
           <div className="flex">
-            <p>{content}</p>
+            <p>{comment.content}</p>
           </div>
         </div>
         <div className="pt-4">

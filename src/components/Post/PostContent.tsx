@@ -1,8 +1,10 @@
+'use client'
 import { DataService } from '@/services/DataServices'
-import { Post, User } from '../../../data'
+import { Post, User, Comment } from '../../../data'
 import CommentForm from './CommentForm'
 import PostFooter from './PostFooter'
 import PostHeader from './PostHeader'
+import { useState } from 'react'
 
 interface PostContentProps {
   users: User[]
@@ -10,10 +12,26 @@ interface PostContentProps {
 }
 
 export default function PostContent({ users, post }: PostContentProps) {
+  const [comments, setComments] = useState<Comment[]>(post.comments)
+
   const data = new DataService()
   const user = data.getUserById(post.userId)
 
   if (!user) return
+
+  function addComment(newComment: Comment) {
+    setComments([...comments, newComment])
+  }
+
+  function deleteComment(comment: Comment) {
+    const index = comments.findIndex((c) => c === comment)
+
+    if (index !== -1) {
+      const updatedComments = [...comments]
+      updatedComments.splice(index, 1)
+      setComments(updatedComments)
+    }
+  }
 
   return (
     <div className="bg-zinc-800 text-zinc-50  rounded-lg">
@@ -28,17 +46,17 @@ export default function PostContent({ users, post }: PostContentProps) {
           ))}
         </article>
         <footer>
-          <CommentForm />
-          {post.comments.map((comment, index) => {
+          <CommentForm onAddComment={addComment} />
+          {comments.map((comment, index) => {
             const userComment = users.find((user) => user.id === comment.userId)
 
             if (userComment) {
               return (
                 <PostFooter
                   key={index}
-                  profileUrl={userComment.profileUrl}
-                  name={userComment.name}
-                  content={comment.content}
+                  user={userComment}
+                  comment={comment}
+                  onDeleteComment={deleteComment}
                 />
               )
             }
