@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { User } from '../../../data'
-import { DataService } from '@/services/DataServices'
+import { DateServices } from '@/services/DateServices'
 
 interface PostHeaderProps {
   user: User
@@ -8,7 +8,7 @@ interface PostHeaderProps {
 }
 
 export default function PostHeader({ user, date }: PostHeaderProps) {
-  const formattedDate = new DataService().dateFormatter(date)
+  const formattedDate = new DateServices().dateFormatter(date)
   return (
     <header className="flex justify-between items-center">
       <div className="flex items-center gap-4">

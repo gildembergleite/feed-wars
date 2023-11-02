@@ -8,6 +8,8 @@ export interface User {
 export interface Comment {
   userId: number
   content: string
+  publishedAt: Date
+  likes: number
 }
 
 export interface Post {
@@ -67,10 +69,14 @@ export const data: Data = {
         {
           userId: 1,
           content: 'Darth Vader, você está perdendo a sua humanidade.',
+          publishedAt: new Date('2023-10-15T13:00:00Z'),
+          likes: 0,
         },
         {
           userId: 2,
           content: 'É hora de se redimir, Vader.',
+          publishedAt: new Date('2023-10-15T13:00:00Z'),
+          likes: 0,
         },
       ],
     },
@@ -85,6 +91,8 @@ export const data: Data = {
           userId: 0,
           content:
             'Luke, um dia você vai entender o equilíbrio entre a luz e a escuridão.',
+          publishedAt: new Date('2023-10-15T13:00:00Z'),
+          likes: 0,
         },
       ],
     },
@@ -98,6 +106,8 @@ export const data: Data = {
         {
           userId: 1,
           content: 'Estamos com você, Leia.',
+          publishedAt: new Date('2023-10-15T13:00:00Z'),
+          likes: 0,
         },
       ],
     },
