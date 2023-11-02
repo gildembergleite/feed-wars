@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { User } from '../../../data'
+import { DataService } from '@/services/DataServices'
 
 interface PostHeaderProps {
   user: User
@@ -7,6 +8,7 @@ interface PostHeaderProps {
 }
 
 export default function PostHeader({ user, date }: PostHeaderProps) {
+  const formattedDate = new DataService().dateFormatter(date)
   return (
     <header className="flex justify-between items-center">
       <div className="flex items-center gap-4">
@@ -25,7 +27,7 @@ export default function PostHeader({ user, date }: PostHeaderProps) {
         </div>
       </div>
       <div>
-        <span className="text-zinc-400">{date.toUTCString()}</span>
+        <time className="text-zinc-400">{formattedDate}</time>
       </div>
     </header>
   )
