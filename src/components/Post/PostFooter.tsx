@@ -19,7 +19,9 @@ export default function PostFooter({
   const formattedDate = new DateServices().dateFormatter(comment.publishedAt)
 
   function handleLikeButton() {
-    setLikes(likes + 1)
+    setLikes((state) => {
+      return state + 1
+    })
   }
   return (
     <div className="flex justify-center items-start gap-4 pt-6">
