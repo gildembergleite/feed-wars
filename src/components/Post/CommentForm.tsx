@@ -3,13 +3,21 @@ import { useState } from 'react'
 
 export default function CommentForm() {
   const [isFocus, setIsFocus] = useState(false)
+
+  function handleTextAreaFocus() {
+    setIsFocus(true)
+  }
+  function handleTextAreaBlur() {
+    setIsFocus(false)
+  }
+
   return (
-    <div>
+    <form>
       <div className="flex flex-col pt-6 pb-4 gap-4 border-t border-t-zinc-700">
         <label>Deixe seu comentário</label>
         <textarea
-          onFocus={() => setIsFocus(true)}
-          onBlur={() => setIsFocus(false)}
+          onFocus={handleTextAreaFocus}
+          onBlur={handleTextAreaBlur}
           className="p-4 rounded-lg bg-zinc-900 resize-none"
           placeholder="Insira aqui o conteúdo do seu comentário"
           name="comment"
@@ -21,6 +29,6 @@ export default function CommentForm() {
           Publicar
         </button>
       )}
-    </div>
+    </form>
   )
 }

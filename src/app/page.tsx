@@ -1,25 +1,20 @@
 import AsideProfile from '@/components/AsideProfile'
 import Header from '@/components/Header'
-import Post from '@/components/Post'
-import data from '../../data.json'
+import PostSection from '@/components/Post'
+import { DataService } from '@/services/DataServices'
 
 export default function Home() {
+  const data = new DataService()
+  const posts = data.getPosts()
+  const users = data.getUsers()
   return (
     <>
       <Header />
       <div className="flex w-full justify-center p-8">
         <div className="flex w-full max-w-7xl justify-center items-start gap-8">
-          <AsideProfile />
+          <AsideProfile user={users[0]} />
           <section className="flex flex-1 flex-col gap-8">
-            {data.posts.map((post, index) => (
-              <Post
-                key={index}
-                userId={post.userId}
-                content={post.content}
-                hashtags={post.hashtags}
-                comments={post.comments}
-              />
-            ))}
+            <PostSection users={users} posts={posts} />
           </section>
         </div>
       </div>

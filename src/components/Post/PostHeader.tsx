@@ -1,16 +1,12 @@
 import Image from 'next/image'
+import { User } from '../../../data'
 
 interface PostHeaderProps {
-  profileUrl: string
-  name: String
-  role: String
+  user: User
+  date: Date
 }
 
-export default function PostHeader({
-  profileUrl,
-  name,
-  role,
-}: PostHeaderProps) {
+export default function PostHeader({ user, date }: PostHeaderProps) {
   return (
     <header className="flex justify-between items-center">
       <div className="flex items-center gap-4">
@@ -19,17 +15,17 @@ export default function PostHeader({
             className="p-1 rounded-lg border-sky-600 border-2 bg-zinc-800"
             width={60}
             height={60}
-            src={profileUrl}
+            src={user.profileUrl}
             alt=""
           />
         </div>
         <div>
-          <h3 className="font-bold text-zinc-50">{name}</h3>
-          <span className="text-zinc-400">{role}</span>
+          <h3 className="font-bold text-zinc-50">{user.name}</h3>
+          <span className="text-zinc-400">{user.role}</span>
         </div>
       </div>
       <div>
-        <span className="text-zinc-400">Publicado há 1h</span>
+        <span className="text-zinc-400">{date.toUTCString()}</span>
       </div>
     </header>
   )
