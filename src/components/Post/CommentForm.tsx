@@ -27,6 +27,7 @@ export default function CommentForm({ onAddComment }: CommentFormProps) {
       userId: 0,
       content: textAreaContent,
       publishedAt: new Date(),
+      likes: 0,
     }
     setTextAreaContent('')
     onAddComment(comment)
